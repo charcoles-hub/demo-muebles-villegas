@@ -1,0 +1,292 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import logo from '../assets/images/logo-villegas.jpg';
+import heroImg from '../assets/images/hero-medicion.jpg';
+import medicionImg from '../assets/images/medicion-tabla.jpg';
+import armarioImg from '../assets/images/armario-medida.jpg';
+import texturaNogal from '../assets/images/textura-nogal.jpg';
+
+const telefono = '615 64 89 52';
+const telefonoHref = 'tel:+34615648952';
+const whatsappHref = 'https://wa.me/34615648952?text=Hola%2C%20quer%C3%ADa%20pedir%20presupuesto%20para%20un%20mueble%20a%20medida';
+const email = 'info@mueblesvillegas.es';
+const direccion = 'Carretera del Prat, 50, Cornellà de Llobregat';
+const mapsHref = 'https://www.google.com/maps/search/?api=1&query=Muebles+Villegas+Carretera+del+Prat+50+Cornell%C3%A0+de+Llobregat';
+
+const pasos = [
+  { n: '1', t: 'Nos cuentas qué necesitas', d: 'Por teléfono o WhatsApp, nos explicas el espacio y lo que te hace falta.' },
+  { n: '2', t: 'Medimos el espacio', d: 'Se toman las medidas exactas del hueco: un mueble a medida parte de ahí.' },
+  { n: '3', t: 'Presupuesto sin compromiso', d: 'Recibes el presupuesto antes de que se corte un solo tablón.' },
+  { n: '4', t: 'Fabricación en el taller', d: 'El mueble se hace a medida en Cornellà de Llobregat.' },
+];
+---
+
+<Layout
+  title="Muebles Villegas — Mueble a medida en Cornellà de Llobregat"
+  description="Carpintería familiar en Cornellà de Llobregat. Mueble a medida e interiorismo, carpinteros desde 1970. Pide presupuesto sin compromiso."
+>
+  <header class="sticky top-0 z-40 border-b border-linea bg-fondo/95 backdrop-blur">
+    <div class="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-5 py-3">
+      <a href="#inicio" class="inline-flex shrink-0 items-center py-2">
+        <Image src={logo} alt="Muebles Villegas" width={220} height={62} loading="eager" class="h-10 w-auto sm:h-12" />
+      </a>
+      <nav class="hidden items-center gap-6 text-sm font-semibold md:flex" aria-label="Principal">
+        <a href="#que-hacemos" class="hover:text-acento">Qué hacemos</a>
+        <a href="#como-funciona" class="hover:text-acento">Cómo funciona</a>
+        <a href="#resultado" class="hover:text-acento">El resultado</a>
+        <a href="#contacto" class="hover:text-acento">Dónde estamos</a>
+      </nav>
+      <a
+        href={telefonoHref}
+        class="corte-inglete-pequeno shrink-0 bg-acento px-4 py-3 text-sm font-semibold text-sobre-acento transition hover:bg-acento-fuerte"
+        data-tabular
+      >
+        Llamar al {telefono}
+      </a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- Hero: foto a sangre -->
+    <section class="relative min-h-[88svh] overflow-hidden corte-inglete-grande">
+      <Image
+        src={heroImg}
+        alt="Manos midiendo un tablón de madera con una cinta métrica sobre un banco de carpintero"
+        widths={[640, 1024, 1600, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-tinta via-tinta/35 to-tinta/0" aria-hidden="true"></div>
+
+      <div class="relative flex min-h-[88svh] max-w-[1200px] flex-col justify-end px-5 py-12 mx-auto">
+        <div data-animar-entrada class="max-w-xl">
+          <h1 class="text-[clamp(2.4rem,1.7rem+3.2vw,4.4rem)] font-[650] leading-[1.03] tracking-[-0.02em] text-sobre-acento">
+            Mueble a medida, hecho en el taller.
+          </h1>
+          <p class="mt-4 max-w-md text-lg text-sobre-acento/90">
+            Muebles Villegas mide, diseña y fabrica en Cornellà de Llobregat. Carpinteros desde 1970.
+          </p>
+          <p class="mt-6 text-sm font-semibold text-sobre-acento/80">
+            {direccion}
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href={telefonoHref}
+              class="corte-inglete-pequeno bg-acento px-6 py-3.5 text-base font-semibold text-sobre-acento transition hover:bg-acento-fuerte"
+            >
+              Llamar al {telefono}
+            </a>
+            <a
+              href={whatsappHref}
+              class="corte-inglete-pequeno border border-sobre-acento/70 px-6 py-3.5 text-base font-semibold text-sobre-acento transition hover:bg-sobre-acento/10"
+            >
+              Escribir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué hacemos -->
+    <section id="que-hacemos" class="mx-auto max-w-[1200px] px-5 py-20 md:py-28">
+      <div class="grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-16">
+        <div>
+          <p class="font-display text-[clamp(2.4rem,2rem+2vw,3.6rem)] font-[650] leading-none text-nogal" data-tabular>
+            1970
+          </p>
+          <p class="mt-3 text-lg text-texto-suave">
+            El rótulo de Muebles Villegas dice «fusters des de 1970». Carpinteros desde entonces.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.7rem,1.4rem+1.4vw,2.5rem)] font-[650] leading-[1.08]">Qué hacemos</h2>
+          <ul class="mt-6 space-y-6 text-lg">
+            <li class="border-t border-linea pt-5">
+              <p class="font-semibold">Mueble a medida</p>
+              <p class="mt-1 text-texto-suave">
+                Se fabrica para el hueco exacto de tu casa: armarios, muebles y piezas que no salen de un catálogo.
+              </p>
+            </li>
+            <li class="border-t border-linea pt-5">
+              <p class="font-semibold">Interiorismo y decoración</p>
+              <p class="mt-1 text-texto-suave">
+                Así lo recoge también su propio rótulo, junto al oficio de carpintería.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="bg-superficie py-20 md:py-28">
+      <div class="mx-auto max-w-[1200px] px-5">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 class="text-[clamp(1.7rem,1.4rem+1.4vw,2.5rem)] font-[650] leading-[1.08]">
+            Así se hace un mueble a medida
+          </h2>
+          <a
+            href={telefonoHref}
+            class="corte-inglete-pequeno border border-tinta px-5 py-3 text-sm font-semibold transition hover:bg-tinta hover:text-sobre-acento"
+          >
+            Pide presupuesto sin compromiso
+          </a>
+        </div>
+
+        <Image
+          src={medicionImg}
+          alt="Manos marcando con lápiz una medida sobre un tablón de madera, con una cinta métrica amarilla"
+          widths={[400, 640]}
+          sizes="(min-width: 640px) 320px, 100vw"
+          loading="lazy"
+          class="corte-inglete-pequeno mt-10 h-48 w-full max-w-sm object-cover"
+        />
+
+        <ol class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {pasos.map((paso) => (
+            <li>
+              <span class="font-display text-3xl font-[650] text-nogal" data-tabular>{paso.n}</span>
+              <p class="mt-3 font-semibold">{paso.t}</p>
+              <p class="mt-1 text-texto-suave">{paso.d}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- El resultado: bloque a sangre -->
+    <section id="resultado" class="relative">
+      <figure class="relative">
+        <Image
+          src={armarioImg}
+          alt="Vestidor con armario de madera a medida, estantes abiertos y puerta de madera"
+          widths={[640, 1024, 1600, 2000]}
+          sizes="100vw"
+          loading="lazy"
+          class="corte-inglete-grande h-[60svh] w-full object-cover md:h-[78svh]"
+        />
+        <figcaption class="absolute bottom-4 right-5 bg-tinta/80 px-3 py-1.5 text-xs text-sobre-acento">
+          Imagen de referencia: armario a medida
+        </figcaption>
+      </figure>
+      <div class="mx-auto max-w-[1200px] px-5 py-14">
+        <p class="max-w-2xl text-[clamp(1.4rem,1.2rem+0.9vw,1.9rem)] font-display font-[650] leading-snug">
+          Un armario pensado para el hueco exacto, no al revés.
+        </p>
+      </div>
+    </section>
+
+    <!-- Confianza: cita grande -->
+    <section class="border-y border-linea bg-superficie py-16">
+      <div class="mx-auto flex max-w-[1200px] flex-wrap items-center gap-6 px-5">
+        <p class="font-display text-6xl font-[650] text-nogal" data-tabular>5,0</p>
+        <div>
+          <p class="text-lg font-semibold">22 reseñas en Google</p>
+          <a href={mapsHref} target="_blank" rel="noopener" class="text-acento hover:text-acento-fuerte">
+            Ver la ficha en Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dónde estamos y contacto -->
+    <section id="contacto" class="mx-auto max-w-[1200px] px-5 py-20 md:py-28">
+      <h2 class="text-[clamp(1.7rem,1.4rem+1.4vw,2.5rem)] font-[650] leading-[1.08]">Dónde estamos</h2>
+      <div class="mt-10 grid gap-10 md:grid-cols-2">
+        <dl class="space-y-6 text-lg">
+          <div class="border-t border-linea pt-5">
+            <dt class="text-sm font-semibold uppercase tracking-wide text-texto-suave">Taller</dt>
+            <dd class="mt-1">
+              {direccion}
+              <br />
+              <a
+                href={mapsHref}
+                target="_blank"
+                rel="noopener"
+                class="-my-3 inline-block py-3 text-acento hover:text-acento-fuerte"
+              >
+                Cómo llegar
+              </a>
+            </dd>
+          </div>
+          <div class="border-t border-linea pt-5">
+            <dt class="text-sm font-semibold uppercase tracking-wide text-texto-suave">Teléfono</dt>
+            <dd class="mt-1">
+              <a href={telefonoHref} class="-my-3 inline-block py-3 hover:text-acento" data-tabular>{telefono}</a>
+            </dd>
+          </div>
+          <div class="border-t border-linea pt-5">
+            <dt class="text-sm font-semibold uppercase tracking-wide text-texto-suave">Email</dt>
+            <dd class="mt-1">
+              <a href={`mailto:${email}`} class="-my-3 inline-block py-3 hover:text-acento">{email}</a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="flex flex-col justify-between gap-6 border-t border-linea pt-5 md:border-t-0 md:border-l md:pl-10 md:pt-0">
+          <Image
+            src={texturaNogal}
+            alt=""
+            role="presentation"
+            widths={[480, 800]}
+            sizes="(min-width: 768px) 480px, 100vw"
+            loading="lazy"
+            class="corte-inglete-pequeno h-40 w-full object-cover"
+          />
+          <div class="flex flex-wrap gap-3">
+            <a
+              href={telefonoHref}
+              class="corte-inglete-pequeno bg-acento px-6 py-3.5 text-base font-semibold text-sobre-acento transition hover:bg-acento-fuerte"
+            >
+              Llamar al {telefono}
+            </a>
+            <a
+              href={whatsappHref}
+              class="corte-inglete-pequeno border border-tinta px-6 py-3.5 text-base font-semibold transition hover:bg-tinta hover:text-sobre-acento"
+            >
+              Escribir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-tinta pb-28 pt-16 text-sobre-acento md:pb-16">
+    <div class="mx-auto max-w-[1200px] px-5">
+      <Image src={logo} alt="Muebles Villegas" width={180} height={51} loading="lazy" class="h-9 w-auto opacity-90" />
+      <div class="mt-8 grid gap-8 text-sm sm:grid-cols-3">
+        <p>{direccion}</p>
+        <p>
+          <a href={telefonoHref} class="-my-3 inline-block py-3 hover:text-acento-suave" data-tabular>{telefono}</a>
+        </p>
+        <p>
+          <a href={`mailto:${email}`} class="-my-3 inline-block py-3 hover:text-acento-suave">{email}</a>
+        </p>
+      </div>
+      <p class="mt-10 border-t border-sobre-acento/15 pt-6 text-xs text-sobre-acento/70">
+        Propuesta de diseño para Muebles Villegas · preparada por
+        <a href="https://sergiogarciaweb.com" class="underline underline-offset-2 hover:text-acento-suave">
+          Sergio García
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Barra fija inferior (móvil) -->
+  <nav
+    class="fixed inset-x-0 bottom-0 z-40 flex border-t border-linea bg-fondo md:hidden"
+    style={`padding-bottom: env(safe-area-inset-bottom)`}
+    aria-label="Contacto rápido"
+  >
+    <a href={telefonoHref} class="flex-1 px-4 py-3.5 text-center text-sm font-semibold text-tinta">
+      Llamar
+    </a>
+    <a href={whatsappHref} class="flex-1 bg-acento px-4 py-3.5 text-center text-sm font-semibold text-sobre-acento">
+      WhatsApp
+    </a>
+  </nav>
+</Layout>
